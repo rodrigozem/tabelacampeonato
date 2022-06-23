@@ -1,0 +1,52 @@
+.material-symbols-outlined {            
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.icon-xs { font-size:9px; margin-right:7px;}
+.text-end { color: #ad9f9f; cursor:default;}
+
+table { font-size: 11px; }
+table th { font-weight:normal; }
+table thead { height: 46px;}
+table thead tr th:nth-child(even){ --bs-table-accent-bg: transparent!important;}
+table tbody {font-size:13px;}
+table tbody tr td:not(:first-child) { text-align:center;}
+table thead tr th:not(:first-child) { text-align:center;}
+table th:first-child { background-color: #FFF; position:sticky;left:0px;z-index:9999;}
+table td:nth-child(2) {background-color: #FFF;position:sticky;left:0px;z-index:9999;}
+
+.cla { font-size: 20px; width:20px; display:inline-block;}
+.cla-gcla { color: blue; display:inline-block; font-size:20px; }
+.cla-zcla { color: red; }
+.cla-time { font-size: 18px;padding-left:20px; }
+.cla-ultimos-jogos { border-radius: 50%;display: inline-block;height: 7px;margin-left: 2px;overflow: hidden;width: 7px; }
+.cla-ultimos-jogos--v { background-color: #51a81e; }
+.cla-ultimos-jogos--d { background-color: #f00; }
+.cla-ultimos-jogos--e { background-color: #ccc; }        
+.cla-ultimos-jogos--neutra { background-color: #ccc; }
+.cla-title { width:40% }
+.cla-title::after { width:10%;content:'CLASSIFICAÇÃO'}
+.cla-box {
+    height:7px;
+    width:7px;
+    margin-right:5px;
+}
+
+.jogos-info { font-size: 11px; }
+.jogos-time img { height:30px;width:30px; }
+.jogos-versus span { font-size:14px; }
+.legenda { font-size: 11px; }
+@media (max-width: 768px) {
+    .cla { font-size: 20px; width:50px; display:inline-block;}
+    .cla-ultimos-jogos { margin-left:1px;height:5px;width:5px;}
+    .cla-time { font-size: 17px;padding-left:5px; }
+    .cla-title { width:80% }
+    .cla-title::after { width:60%;content:'CLASSIFIC.'}
+    table tbody tr td:not(:first-child) { text-align:left; }
+    table thead tr th:not(:first-child) { text-align:left; }
+    .legenda { font-size: 11px; margin-top: 7px;margin-bottom: 15px;}
+}
