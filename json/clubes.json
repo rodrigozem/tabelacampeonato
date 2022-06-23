@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "nome": "Betim",
+        "abr": "BET",
+        "img": "bet.svg",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 2,
+        "nome": "Boa Esporte",
+        "abr": "BOA",
+        "img": "boa.svg",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 3,
+        "nome": "Democrata SL",
+        "abr": "DSL",
+        "img": "dsl.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 4,
+        "nome": "Ipatinga",
+        "abr": "IPA",
+        "img": "ipa.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 5,
+        "nome": "Tupynamb\u00e1s",
+        "abr": "TPY",
+        "img": "tpy.svg",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 6,
+        "nome": "Varginha EC",
+        "abr": "VEC",
+        "img": "vec.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+        {
+        "id": 7,
+        "nome": "União Luziense",
+        "abr": "ULU",
+        "img": "ulu.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 8,
+        "nome": "Nacional de Muriaé",
+        "abr": "NAC",
+        "img": "nac.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 9,
+        "nome": "Coimbra",
+        "abr": "COI",
+        "img": "coi.svg",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 10,
+        "nome": "Tupi",
+        "abr": "TUP",
+        "img": "tup.svg",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 11,
+        "nome": "Uberaba",
+        "abr": "USC",
+        "img": "usc.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    },
+    {
+        "id": 12,
+        "nome": "Aymorés",
+        "abr": "AYM",
+        "img": "aym.png",
+        "criterios":
+        {
+            "p": 0,
+            "v": 0,
+            "e": 0,
+            "d": 0,
+            "gp": 0,
+            "gc": 0,
+            "sg": 0,
+            "perc": 0,
+            "uj": "-----"
+        },
+        "posicao": null,
+        "ultimos_jogos": null
+    }
+]

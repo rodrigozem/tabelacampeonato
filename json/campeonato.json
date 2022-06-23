@@ -1,0 +1,315 @@
+{
+	"descricao": "MINEIRO MÓDULO 2",
+    "fase_atual": 2,
+	"fase":
+    [
+        {
+            "id": 1,
+            "descricao": "PRIMEIRA FASE",
+            "classificacao": [
+                {
+                    "descricao": "Classificados",
+                    "posicao_inicial": 1,
+                    "posicao_final": 6,
+                    "class_color": "text-primary",
+                    "class_legenda": "bg-primary"
+                },
+                {
+                    "descricao": "Manteve",
+                    "posicao_inicial": 7,
+                    "posicao_final": 10,
+                    "class_color": "text-secondary",
+                    "class_legenda": "bg-secondary"
+                },
+                {
+                    "descricao": "Rebaixados",
+                    "posicao_inicial": 11,
+                    "posicao_final": 12,
+                    "class_color": "text-danger",
+                    "class_legenda": "bg-danger"
+                }
+            ],
+            "rodadas" :
+                {
+                    "1": [
+                            {
+                                "data": "27/04/2022",
+                                "hora": "15:00",
+                                "local": "MUNICIPAL DE JUIZ DE FORA",
+                                "time_1": 5,
+                                "time_2": 2,
+                                "resultado": "0x0"
+                            },
+                            {
+                                "data": "27/04/2022",
+                                "hora": "15:00",
+                                "local": "ARENA VERA CRUZ",
+                                "time_1": 1,
+                                "time_2": 3,
+                                "resultado": "1x1"
+                            },
+                            {
+                                "data": "27/04/2022",
+                                "hora": "19:00",
+                                "local": "CASTOR CIFUENTES",
+                                "time_1": 9,
+                                "time_2": 8,
+                                "resultado": "0x2"
+                            },
+                            {
+                                "data": "27/04/2022",
+                                "hora": "19:00",
+                                "local": "MUNICIPAL DE VARGINHA",
+                                "time_1": 6,
+                                "time_2": 11,
+                                "resultado": "0x1"
+                            },
+                            {
+                                "data": "27/04/2022",
+                                "hora": "19:30",
+                                "local": "AFFONSO DE CARVALHO",
+                                "time_1": 12,
+                                "time_2": 7,
+                                "resultado": "2x1"
+                            },
+                            {
+                                "data": "27/04/2022",
+                                "hora": "19:30",
+                                "local": "IPATINGÃO ",
+                                "time_1": 4,
+                                "time_2": 10,
+                                "resultado": "2x0"
+                            }
+                    ],
+                    "2": [
+                        {
+                            "data": "30/04/2022",
+                            "hora": "15:30",
+                            "local": "ARENA DO JACARÉ",
+                            "time_1": 3,
+                            "time_2": 6,
+                            "resultado": "1x0"
+                        },
+                        {
+                            "data": "30/04/2022",
+                            "hora": "18:30",
+                            "local": "UBERABÃO ",
+                            "time_1": 11,
+                            "time_2": 1,
+                            "resultado": "1x2"
+                        },
+                        {
+                            "data": "01/05/2022",
+                            "hora": "11:00",
+                            "local": "MUNICIPAL DE JUIZ DE FORA",
+                            "time_1": 10,
+                            "time_2": 5,
+                            "resultado": "2x1"
+                        },
+                        {
+                            "data": "02/05/2022",
+                            "hora": "19:30",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "time_1": 2,
+                            "time_2": 12,
+                            "resultado": "1x0"
+                        },
+                        {
+                            "data": "02/05/2022",
+                            "hora": "20:15",
+                            "local": "SOARES DE AZEVEDO",
+                            "time_1": 8,
+                            "time_2": 4,
+                            "resultado": "1x1"
+                        },
+                        {
+                            "data": "02/05/2022",
+                            "hora": "20:30",
+                            "local": "FRIMISA",
+                            "time_1": 7,
+                            "time_2": 9,
+                            "resultado": "1x1"
+                        }
+                    ],
+                    "3": [
+                        {
+                            "data": "06/05/2022",
+                            "hora": "15:00",
+                            "local": "MUNICIPAL DE JUIZ DE FORA",
+                            "time_1": 5,
+                            "time_2": 6,
+                            "resultado": "1x1"
+                        },
+                        {
+                            "data": "06/05/2022",
+                            "hora": "19:00",
+                            "local": "CASTOR CIFUENTES",
+                            "time_1": 9,
+                            "time_2": 12,
+                            "resultado": "1x1"
+                        },
+                        {
+                            "data": "07/05/2022",
+                            "hora": "15:00",
+                            "local": "ARENA VERA CRUZ",
+                            "time_1": 1,
+                            "time_2": 4,
+                            "resultado": "3x0"
+                        },
+                        {
+                            "data": "07/05/2022",
+                            "hora": "15:30",
+                            "local": "SOARES DE AZEVEDO",
+                            "time_1": 8,
+                            "time_2": 11,
+                            "resultado": "0x0"
+                        },
+                        {
+                            "data": "07/05/2022",
+                            "hora": "15:30",
+                            "local": "MUNICIPAL JUIZ DE FORA",
+                            "time_1": 10,
+                            "time_2": 7,
+                            "resultado": "0x0"
+                        },
+                        {
+                            "data": "07/05/2022",
+                            "hora": "17:00",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "time_1": 2,
+                            "time_2": 3,
+                            "resultado": "3x1"
+                        }
+                    ]
+                }
+        },
+        {
+            "id": 2,
+            "descricao": "HEXAGONAL FINAL",
+            "classificacao": [
+                {
+                    "descricao": "Classificados",
+                    "posicao_inicial": 1,
+                    "posicao_final": 2,
+                    "class_color": "text-primary",
+                    "class_legenda": "bg-primary"
+                },
+                {
+                    "descricao": "Manteve",
+                    "posicao_inicial": 7,
+                    "posicao_final": 10,
+                    "class_color": "text-secondary",
+                    "class_legenda": "bg-secondary"
+                }
+            ],
+            "rodadas" :
+                {
+                    "1": [
+                            {
+                                "data": "18/06/2022",
+                                "hora": "15:00",
+                                "local": "ARENA VERA CRUZ",
+                                "time_1": 1,
+                                "time_2": 5,
+                                "resultado": "0x2"
+                            },
+                            {
+                                "data": "18/06/2022",
+                                "hora": "16:00",
+                                "local": "IPATINGÃO",
+                                "time_1": 4,
+                                "time_2": 2,
+                                "resultado": "2x1"
+                            },
+                            {
+                                "data": "19/06/2022",
+                                "hora": "10:00",
+                                "local": "CASTOR CIFUENTES",
+                                "time_1": 6,
+                                "time_2": 3,
+                                "resultado": "1x1"
+                            }
+                    ],
+                    "2": [
+                            {
+                                "data": "22/06/2022",
+                                "hora": "15:00",
+                                "local": "MUNICIPAL JUIZ DE FORA",
+                                "time_1": 5,
+                                "time_2": 4,
+                                "resultado": "0x2"
+                            },
+                            {
+                                "data": "22/06/2022",
+                                "hora": "19:30",
+                                "local": "ARENA DO JACARÉ",
+                                "time_1": 3,
+                                "time_2": 1,
+                                "resultado": "0x1"
+                            },
+                            {
+                                "data": "23/06/2022",
+                                "hora": "19:30",
+                                "local": "MUNICIPAL DE VARGINHA",
+                                "time_1": 2,
+                                "time_2": 6,
+                                "resultado": null
+                            }
+                    ],
+                    "3": [
+                            {
+                                "data": "25/06/2022",
+                                "hora": "16:00",
+                                "local": "IPATINGÃO",
+                                "time_1": 4,
+                                "time_2": 1,
+                                "resultado": null
+                            },
+                            {
+                                "data": "26/06/2022",
+                                "hora": "10:00",
+                                "local": "MUNICIPAL DE VARGINHA",
+                                "time_1": 6,
+                                "time_2": 5,
+                                "resultado": null
+                            },
+                            {
+                                "data": "27/06/2022",
+                                "hora": "19:30",
+                                "local": "MUNICIPAL DE VARGINHA",
+                                "time_1": 2,
+                                "time_2": 3,
+                                "resultado": null
+                            }
+                    ],
+                    "4": [
+                            {
+                                "data": "01/07/2022",
+                                "hora": "20:00",
+                                "local": "IPATINGÃO",
+                                "time_1": 4,
+                                "time_2": 3,
+                                "resultado": null
+                            },
+                            {
+                                "data": "02/07/2022",
+                                "hora": "15:00",
+                                "local": "ARENA VERA CRUZ",
+                                "time_1": 1,
+                                "time_2": 6,
+                                "resultado": null
+                            },
+                            {
+                                "data": "02/07/2022",
+                                "hora": "16:00",
+                                "local": "MUNICIPAL DE JUIZ DE FORA",
+                                "time_1": 5,
+                                "time_2": 2,
+                                "resultado": null
+                            }
+                    ]
+                }
+            
+        }
+    ]
+}
