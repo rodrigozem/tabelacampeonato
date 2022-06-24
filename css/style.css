@@ -8,9 +8,10 @@
 
 .icon-xs { font-size:9px; margin-right:7px;}
 .text-end { color: #ad9f9f; cursor:default;}
+.thw { width: 70px;}
 
 table { font-size: 11px; }
-table th { font-weight:normal; }
+table th { font-weight:normal;}
 table thead { height: 46px;}
 table thead tr th:nth-child(even){ --bs-table-accent-bg: transparent!important;}
 table tbody {font-size:13px;}
@@ -41,6 +42,7 @@ table td:nth-child(2) {background-color: #FFF;position:sticky;left:0px;z-index:9
 .jogos-versus span { font-size:14px; }
 .legenda { font-size: 11px; }
 @media (max-width: 768px) {
+    .thw { width: 60px;}
     .cla { font-size: 20px; width:50px; display:inline-block;}
     .cla-ultimos-jogos { margin-left:1px;height:5px;width:5px;}
     .cla-time { font-size: 17px;padding-left:5px; }

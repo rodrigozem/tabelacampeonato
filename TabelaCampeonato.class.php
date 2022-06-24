@@ -316,7 +316,7 @@ class TabelaCampeonato
                             <span class="material-symbols-outlined '.($nFase > 1 ? 'text-success' : 'text-end').'">arrow_back_ios</span>
                         </a>
                     </li>
-                    <li class="nav-item fw-bold fs-4" id="nfase" data-totalfases="'.$this->getTotalFases().'" data-nfase="'.$this->getFaseId($this->getFaseAtual()).'">'.$this->getFaseDescricao($this->getFaseAtual()).'</li>
+                    <li class="nav-item fw-bold fs-5" id="nfase" data-totalfases="'.$this->getTotalFases().'" data-nfase="'.$this->getFaseId($this->getFaseAtual()).'">'.$this->getFaseDescricao($this->getFaseAtual()).'</li>
                     <li class="nav-item pt-1">
                         <a id="btn-fase-next" class="nav-link ps-5" '.( $this->getTotalFases() != $nFase ? 'onclick="fase(1)" href="javascript:void(0)"' : '' ).'">
                             <span class="material-symbols-outlined '.($this->getTotalFases() != $nFase ? 'text-success' : 'text-end').'">arrow_forward_ios</span>
