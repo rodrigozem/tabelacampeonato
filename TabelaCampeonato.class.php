@@ -361,7 +361,6 @@ class TabelaCampeonato
             $r2[$kData]['rodada_completa'] = $rodada_completa;
         }
 
-        //var_dump($r2);exit;
         $arr = [];
         $i = 0;
         foreach ($r2 as $k => $v) {
@@ -371,17 +370,35 @@ class TabelaCampeonato
         }        
         
         $today = strtotime(date('Y-m-d'));
-        
-        
+
+        /* Verifica se todos os confrontos foram realizados */
+        $confrontos_realizados = true;
         foreach($arr as $k => $v)
         {
-            if( $v['rodada_completa'] == true && $v['data'] < $today)
-                unset($arr[$k]);
+            if($v['rodada_completa'] == false)
+                $confrontos_realizados = false;
         }
+
+        if(!$confrontos_realizados)
+        {
+            foreach($arr as $k => $v)
+            {
+                if( count($arr) > 1 )
+                if( $v['rodada_completa'] == true )
+                {
+                    if($v['data'] < $today)
+                        unset($arr[$k]);
+                }
+            }
         
-        $date = max(array_column($arr,'data'));
+            $date = max(array_column($arr,'data'));
+
+            $rodada = array_search(date('Y-m-d',$date), array_column($r2,'data'));
+        } else {
+            $rodada = count($arr);  
+        }
        
-        return array_search(date('Y-m-d',$date), array_column($r2,'data'));
+        return $rodada;
     }
 
     /* Verifica se todos os jogos possuem resultados */
