@@ -188,7 +188,7 @@
             "descricao": "HEXAGONAL FINAL",
             "classificacao": [
                 {
-                    "descricao": "Classificados",
+                    "descricao": "Acesso Módulo 1",
                     "posicao_inicial": 1,
                     "posicao_final": 2,
                     "class_color": "text-primary",

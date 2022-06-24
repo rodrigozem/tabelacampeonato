@@ -287,8 +287,11 @@ class TabelaCampeonato
 
         $code = "";
         foreach ($class as $key => $cla) {
-            $code .= '<div class="cla-box ms-2 '.$cla['class_legenda'].'"></div><span>'.$cla['descricao'].'</span>';
+            $code .= '<div class="cla-box ms-2 '.$cla['class_legenda'].'"></div><span>'.$cla['descricao'].'</span>';            
         }
+        $code .= '<span class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--v"></span> Vitória';
+        $code .= '<span class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--d"></span> Derrota';
+        $code .= '<span class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--e"></span> Empate';
 
         return $code;
     }
