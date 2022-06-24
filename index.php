@@ -1,18 +1,13 @@
 <?php
 require("TabelaCampeonato.class.php");
-
 $modulo2 = new TabelaCampeonato();
-$classificacao = $modulo2->showClassificacao();
-$rodada = $modulo2->showJogosRodada();
-$legenda = $modulo2->showLegendaFase();
-
 ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?=mb_strtolower($modulo2->getNomeCampeonato());?></title>
+    <title>tabela | <?=mb_strtolower($modulo2->getNomeCampeonato());?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/style.css">
@@ -49,7 +44,7 @@ $legenda = $modulo2->showLegendaFase();
                             </tr>
                         </thead>
                         <tbody id="classificacao">
-                            <?=$classificacao;?>
+                            <?=$modulo2->showClassificacao();?>
                         </tbody>
                     </table>
                 </div>
@@ -65,11 +60,11 @@ $legenda = $modulo2->showLegendaFase();
                     <div><span class="ms-2"><strong>%</strong> Aproveitamento</span></div>
                 </div>
                 <div class="d-flex justify-content-center flex-wrap mt-2 align-items-center legenda" id="legenda-fase">
-                    <?=$legenda;?>
+                    <?=$modulo2->showLegendaFase();?>
                 </div>
             </div>
             <div class="col-lg-4 col-12" id="rodada">
-                <?=$rodada;?>
+                <?=$modulo2->showJogosRodada();?>
             </div>
         </div>
     </div>

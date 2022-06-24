@@ -199,48 +199,6 @@ class TabelaCampeonato
                         $classificacao_rodada[$kRodada][$time['id']] = ++$posicao;
             } 
         }
-
-        $arrCla = [];
-        foreach ($classificacao_rodada as $k => $rodada) {    
-            foreach ($rodada as $time => $posicao) {
-                $arrCla[$time][] = $posicao;
-            }
-        }
-
-        //var_dump($arrCla);exit;
-
-        if( $this->getRodadaAtual() > 1 /* && $this->isRodadaAtualCompleta() */ )
-        {
-            ksort($arrCla);
-          
-            $cla = [];
-            foreach ($arrCla as $time => $posicao)
-            {
-                /* Remove elementos do array deixando somente as duas últimas posições para comparação */
-                for ($i=2; $i <= count($posicao); $i++)
-                    unset($posicao[$i]);
-                
-                /* Adiciona as duas posições que restaram no array abaixo */
-                $cla[$time] = $posicao;
-            }
-            
-            /* Com o array da classificação pronto, verifica se possui mais de 1 rodada
-               e começa a montar a classificação colocando quantas posições cada time subiu ou desceu
-               da penúltima rodada para última */
-            if(count($this->rodadas) > 1)
-            {
-                $sobeDesce = [];
-                foreach ($cla as $time => $posicao) {
-                    $sobeDesce[$time] = ($posicao[0] - $posicao[1]);
-                }
-            
-                foreach ($sobeDesce as $time => $posicao) {
-                    /* Busca no array de clubes a chave baseada no valor do ID */
-                    $clubeKey = array_search($time, array_column($this->clubes, 'id'));
-                    $this->clubes[$clubeKey]["posicao"] = $posicao;
-                }
-            }
-        }
         
         /* Percentual de aproveitamento */
         foreach ($this->clubes as $clubeKey => $time)
@@ -276,16 +234,12 @@ class TabelaCampeonato
                                 <div class="d-flex align-items-center">
                                     <span class="cla '.$this->class_posicao($pos,2).'">'.$pos.'</span>
                                     <span class="cla-time w-100">'.$time["nome"].' </span>
-                                    <small class="text-end">'.(empty($time["posicao"])?'0':abs($time["posicao"])).'</small>
-                                    <span class="ms-1 '.( $this->checkNumber((empty($time["posicao"])?'':$time["posicao"])) == 'zero'? 'icon-xs': '').' flex-shrink-1 material-symbols-outlined '.( $this->checkNumber((empty($time["posicao"])?'':$time["posicao"])) == 'positive'?'text-danger': ($this->checkNumber((empty($time["posicao"])?0:$time["posicao"])) == 'zero' ? 'text-secondary' : 'text-success')).'">'.($this->checkNumber((empty($time["posicao"])?0:$time["posicao"])) == 'positive'?'arrow_drop_down': ($this->checkNumber((empty($time["posicao"])?0:$time["posicao"])) == 'zero' ? 'square' : 'arrow_drop_up')).'</span>
                                 </div>
                             </td>
                             <td class="align-middle d-block d-sm-none">
                                 <div class="d-flex align-items-center">
                                     <span class="cla '.$this->class_posicao($pos,2).'">'.$pos.'</span>
                                     <span class="cla-time w-100" title="'.$time["nome"].'">'.$time["abr"].'</span>
-                                    <small class="text-end ms-3">'.(empty($time["posicao"])?'0':abs($time["posicao"])).'</small>
-                                    <span class="ms-1 '.( $this->checkNumber((empty($time["posicao"])?'':$time["posicao"])) == 'zero'? 'icon-xs': '').' flex-shrink-1 material-symbols-outlined '.($this->checkNumber((empty($time["posicao"])?'':$time["posicao"])) == 'positive'?'text-danger': ($this->checkNumber((empty($time["posicao"])?0:$time["posicao"])) == 'zero' ? 'text-secondary' : 'text-success')).'">'.($this->checkNumber((empty($time["posicao"])?0:$time["posicao"])) == 'positive'?'arrow_drop_down': ($this->checkNumber((empty($time["posicao"])?0:$time["posicao"])) == 'zero' ? 'square' : 'arrow_drop_up')).'</span>
                                 </div>
                             </td> 
                             <td class="align-middle bg-light"><strong>'.$time["criterios"]["p"].'</strong></td>
@@ -382,19 +336,49 @@ class TabelaCampeonato
         
         $r1 = [];
         foreach ($rodadas as $kRodada => $rodada) {
-            $r1[$kRodada] = array_column($rodada,'data');
-        }
-        //var_dump($r1);
-        $r2 = [];
-        foreach ($r1 as $kData => $data) {
-            $dt = array();
-            foreach ($data as $k => $d) {
-                $dt[$kData][] = $this->reverse_date($d);
-            }
-            $r2[$kData] = $this->getMaxDate($dt[$kData]);
+            $r1[$kRodada]['data'] = array_column($rodada,'data');
+            $r1[$kRodada]['resultado'] = array_column($rodada,'resultado');
         }
 
-        return array_search(date('Y-m-d',$this->find_closest($r2, date('Y-m-d'))), $r2);
+        $r2 = [];
+        
+        $rodada_completa = true;
+
+        foreach ($r1 as $kData => $row) {
+            $dt = array();
+            $dt = array_map(array($this, 'reverse_date'),$row['data']);
+
+            foreach ($row['resultado'] as $key => $r) {
+                if(is_null($r))
+                    $rodada_completa = false;    
+            }
+            
+            
+            $r2[$kData]['data'] = $this->getMaxDate($dt);
+            $r2[$kData]['rodada_completa'] = $rodada_completa;
+        }
+
+        //var_dump($r2);exit;
+        $arr = [];
+        $i = 0;
+        foreach ($r2 as $k => $v) {
+            $arr[$i]['data'] = strtotime($v['data']);
+            $arr[$i]['rodada_completa'] = $v['rodada_completa'];
+            ++$i;
+        }        
+        
+        $today = strtotime(date('Y-m-d'));
+        
+        
+        foreach($arr as $k => $v)
+        {
+            if( $v['rodada_completa'] == true && $v['data'] < $today)
+                unset($arr[$k]);
+        }
+        
+        $date = max(array_column($arr,'data'));
+       
+        return array_search(date('Y-m-d',$date), array_column($r2,'data'));
     }
 
     /* Verifica se todos os jogos possuem resultados */
