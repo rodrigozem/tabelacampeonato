@@ -308,7 +308,7 @@ class TabelaCampeonato
 
     public function showFases()
     {
-        $nFase = $this->getFaseId($this->getFaseAtual());
+        $nFase = $this->getFaseId();
         
         $code = '<ul class="nav d-flex justify-content-between align-items-center mb-2 bg-light">
                     <li class="nav-item pt-1">
@@ -316,7 +316,7 @@ class TabelaCampeonato
                             <span class="material-symbols-outlined '.($nFase > 1 ? 'text-success' : 'text-end').'">arrow_back_ios</span>
                         </a>
                     </li>
-                    <li class="nav-item fw-bold fs-5" id="nfase" data-totalfases="'.$this->getTotalFases().'" data-nfase="'.$this->getFaseId($this->getFaseAtual()).'">'.$this->getFaseDescricao($this->getFaseAtual()).'</li>
+                    <li class="nav-item fw-bold fs-5" id="nfase" data-totalfases="'.$this->getTotalFases().'" data-nfase="'.$this->getFaseId().'">'.$this->getFaseDescricao().'</li>
                     <li class="nav-item pt-1">
                         <a id="btn-fase-next" class="nav-link ps-5" '.( $this->getTotalFases() != $nFase ? 'onclick="fase(1)" href="javascript:void(0)"' : '' ).'">
                             <span class="material-symbols-outlined '.($this->getTotalFases() != $nFase ? 'text-success' : 'text-end').'">arrow_forward_ios</span>
@@ -418,11 +418,11 @@ class TabelaCampeonato
         return $this->fase;
     }
 
-    public function getFaseDescricao($fase_id){
+    public function getFaseDescricao(){
         return $this->campeonato['fase'][$this->fase]['descricao'];
     }
 
-    public function getFaseId($fase_id){
+    public function getFaseId(){
         return $this->campeonato['fase'][$this->fase]['id'];
     }
 

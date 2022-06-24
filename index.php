@@ -2,12 +2,10 @@
 require("TabelaCampeonato.class.php");
 
 $modulo2 = new TabelaCampeonato();
-$fase = $modulo2->getFaseAtual();
 $classificacao = $modulo2->showClassificacao();
 $rodada = $modulo2->showJogosRodada();
 $legenda = $modulo2->showLegendaFase();
-$fase = $modulo2->getFaseDescricao($fase);
-$modulo2->getClubesFase();
+
 ?>
 <!doctype html>
 <html lang="en">
