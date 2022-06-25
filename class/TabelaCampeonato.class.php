@@ -197,7 +197,6 @@ class TabelaCampeonato
                     array_column($kCriterios, 'p'),  SORT_DESC,
                     array_column($kCriterios, 'sg'), SORT_DESC,                    
                     array_column($kCriterios, 'gp'), SORT_DESC,
-                    array_column($kCriterios, 'd'),  SORT_ASC,
                     array_column($kCriterios, 'v'),  SORT_DESC,
                 $this->clubes );
             }
