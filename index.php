@@ -1,5 +1,5 @@
 <?php
-require("TabelaCampeonato.class.php");
+require("class/TabelaCampeonato.class.php");
 $modulo2 = new TabelaCampeonato();
 ?>
 <!doctype html>

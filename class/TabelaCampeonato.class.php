@@ -108,6 +108,16 @@ class TabelaCampeonato
         $classificacao_rodada = array();
         $ultimos_jogos = array();
 
+        foreach ($this->clubes as $k => $clube) {
+            $this->clubes[$k]["criterios"]["p"]  = 0;
+            $this->clubes[$k]["criterios"]["v"]  = 0;
+            $this->clubes[$k]["criterios"]["e"]  = 0;
+            $this->clubes[$k]["criterios"]["d"]  = 0;
+            $this->clubes[$k]["criterios"]["sg"] = 0;
+            $this->clubes[$k]["criterios"]["gp"] = 0;
+            $this->clubes[$k]["criterios"]["gc"] = 0;
+        }
+
         foreach ($this->rodadas as $kRodada => $rodada)
         {
             foreach ($this->rodadas[$kRodada] as $kRodadaj => $confronto)
@@ -145,7 +155,7 @@ class TabelaCampeonato
                     /* Retorna chave do array de clubes com base na coluna ID do clube */
                     $id_time_1 = array_search($confronto["time_1"], array_column($this->clubes, 'id'));
                     $id_time_2 = array_search($confronto["time_2"], array_column($this->clubes, 'id'));
-                    
+
                     /* Pontos */
                     $this->clubes[$id_time_1]["criterios"]["p"] += $pts_time_1;
                     $this->clubes[$id_time_2]["criterios"]["p"] += $pts_time_2;
@@ -191,13 +201,6 @@ class TabelaCampeonato
                     array_column($kCriterios, 'v'),  SORT_DESC,
                 $this->clubes );
             }
-
-            $posicao = 0;
-
-            foreach ($this->clubes as $kTime => $time) {
-                if(in_array($time['id'],$this->getClubesFase()))
-                        $classificacao_rodada[$kRodada][$time['id']] = ++$posicao;
-            } 
         }
         
         /* Percentual de aproveitamento */
