@@ -38,6 +38,12 @@ switch($acao){
 
         break;
     
+    case 'regulamento':
+        $arrResult = [ 'regulamento' => $modulo2->getRegulamento() ];
+        
+        echo json_encode($arrResult);
+
+        break;
     }
     
 

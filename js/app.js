@@ -1,4 +1,25 @@
 document.getElementById("freeze").style.overflow = "auto";
+
+function showRegulamento()
+{
+    fetch("ajax.php", {
+        // Adding method type
+        method: "POST",
+        // Adding body or contents to send
+        body: JSON.stringify({ acao:'regulamento' })
+    })            
+    .then(response => response.json())
+    .then((data) => {
+        Swal.fire({
+            html: '<p class="pt-4"> '+data.regulamento+'</p>',
+            showCloseButton: true,
+            showCancelButton: false,
+            showConfirmButton: false
+          })
+          
+    });
+}
+
 function rodada(pos)
 {
     let elem = document.getElementById('nrodada');

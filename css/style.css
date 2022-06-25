@@ -17,8 +17,9 @@ table thead tr th:nth-child(even){ --bs-table-accent-bg: transparent!important;}
 table tbody {font-size:13px;}
 table tbody tr td:not(:first-child) { text-align:center;}
 table thead tr th:not(:first-child) { text-align:center;}
-table th:first-child { background-color: #FFF; position:sticky;left:0px;z-index:9999;}
-table td:nth-child(2) {background-color: #FFF;position:sticky;left:0px;z-index:9999;}
+table th:first-child { background-color: #FFF; position:sticky;left:0px;z-index:9;}
+table td:nth-child(2) {background-color: #FFF;position:sticky;left:0px;z-index:9;}
+#btn-regulamento {font-size:10px;color:#51a81e;}
 
 .cla { font-size: 20px; width:20px; display:inline-block;}
 .cla-gcla { color: blue; display:inline-block; font-size:20px; }

@@ -1,6 +1,7 @@
 {
 	"descricao": "MINEIRO MÓDULO 2",
     "fase_atual": 2,
+    "regulamento":"Na primeira fase, as 12 equipes disputam turno único por pontos corridos, de onde saem seis classificados ao hexagonal final. As duas últimas colocadas são rebaixadas para o Mineiro Segunda Divisão. No hexagonal, as equipes se enfrentam em turno e returno em sistema de pontos corridos e os dois primeiros colocados garantem acesso ao Campeonato Mineiro 2023. Nas duas fases, em caso de igualdade na pontuação, são critérios de desempate: 1) mais vitórias; 2) melhor saldo de gols; 3) mais gols pró; 4) confronto direto (entre dois times); 5) menos cartões vermelhos; 6) menos cartões amarelos; 7) sorteio.",
 	"fase":
     [
         {

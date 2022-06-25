@@ -290,6 +290,7 @@ class TabelaCampeonato
         $code .= '<div class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--v"></div> Vitória';
         $code .= '<div class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--d"></div> Derrota';
         $code .= '<div class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--e"></div> Empate';
+        $code .= '<a class="ms-5" id="btn-regulamento" href="javascript:void(0)" onclick="showRegulamento()">REGULAMENTO</a>';
         $code .= '</div>';
 
         return $code;
@@ -390,6 +391,10 @@ class TabelaCampeonato
         }
        
         return $rodada;
+    }
+
+    public function getRegulamento() {
+        return $this->campeonato['regulamento'];
     }
 
     /* Verifica se todos os jogos possuem resultados */
