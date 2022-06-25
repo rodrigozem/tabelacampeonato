@@ -292,9 +292,11 @@ class TabelaCampeonato
         foreach ($class as $key => $cla) {
             $code .= '<div class="cla-box ms-2 '.$cla['class_legenda'].'"></div><span>'.$cla['descricao'].'</span>';            
         }
-        $code .= '<span class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--v"></span> Vitória';
-        $code .= '<span class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--d"></span> Derrota';
-        $code .= '<span class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--e"></span> Empate';
+        $code .= '<div class="d-flex justify-content-center align-items-center">';
+        $code .= '<div class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--v"></div> Vitória';
+        $code .= '<div class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--d"></div> Derrota';
+        $code .= '<div class="ms-2 me-1 cla-ultimos-jogos cla-ultimos-jogos--e"></div> Empate';
+        $code .= '</div>';
 
         return $code;
     }
@@ -346,8 +348,6 @@ class TabelaCampeonato
             $r1[$kRodada]['resultado'] = array_column($rodada,'resultado');
         }
 
-        $r2 = [];
-        
         $rodada_completa = true;
 
         foreach ($r1 as $kData => $row) {
@@ -358,17 +358,15 @@ class TabelaCampeonato
                 if(is_null($r))
                     $rodada_completa = false;    
             }
-            
-            
+
             $r2[$kData]['data'] = $this->getMaxDate($dt);
             $r2[$kData]['rodada_completa'] = $rodada_completa;
         }
 
-        $arr = [];
         $i = 0;
         foreach ($r2 as $k => $v) {
-            $arr[$i]['data'] = strtotime($v['data']);
-            $arr[$i]['rodada_completa'] = $v['rodada_completa'];
+            $r3[$i]['data'] = strtotime($v['data']);
+            $r3[$i]['rodada_completa'] = $v['rodada_completa'];
             ++$i;
         }        
         
@@ -376,29 +374,25 @@ class TabelaCampeonato
 
         /* Verifica se todos os confrontos foram realizados */
         $confrontos_realizados = true;
-        foreach($arr as $k => $v)
-        {
+        foreach($r3 as $k => $v)
             if($v['rodada_completa'] == false)
                 $confrontos_realizados = false;
-        }
 
         if(!$confrontos_realizados)
         {
-            foreach($arr as $k => $v)
+            foreach($r3 as $k => $v)
             {
-                if( count($arr) > 1 )
-                if( $v['rodada_completa'] == true )
-                {
-                    if($v['data'] < $today)
-                        unset($arr[$k]);
-                }
+                if( count($r3) > 1 )
+                    if($v['rodada_completa'])
+                        if($v['data'] < $today)
+                            unset($r3[$k]);
             }
         
-            $date = max(array_column($arr,'data'));
+            $date = max(array_column($r3,'data'));
 
             $rodada = array_search(date('Y-m-d',$date), array_column($r2,'data'));
         } else {
-            $rodada = count($arr);  
+            $rodada = count($r3);  
         }
        
         return $rodada;
@@ -417,7 +411,7 @@ class TabelaCampeonato
         return $rodada_incompleta;
     }
 
-    public function getNomeCampeonato(){
+    public function getNomeCampeonato() {
         return $this->campeonato["descricao"];
     }
 
@@ -425,11 +419,11 @@ class TabelaCampeonato
         return $this->fase;
     }
 
-    public function getFaseDescricao(){
+    public function getFaseDescricao() {
         return $this->campeonato['fase'][$this->fase]['descricao'];
     }
 
-    public function getFaseId(){
+    public function getFaseId() {
         return $this->campeonato['fase'][$this->fase]['id'];
     }
 
@@ -491,5 +485,4 @@ class TabelaCampeonato
     public function reverse_date($date) {
         return implode('-',array_reverse(explode('/',$date)));
     }
-    
 }
