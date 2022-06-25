@@ -20,11 +20,6 @@ class TabelaCampeonato
         $this->rodadas = $this->campeonato['fase'][$this->fase]['rodadas'];
     }
 
-    public function getClubes()
-    {
-        return $this->clubes;
-    }
-
     public function getTotalFases()
     {
         return count( $this->campeonato['fase'] );
