@@ -60,13 +60,13 @@ class TabelaCampeonato
             foreach ($this->campeonato['fase'][$this->fase]['rodadas'][$nRodada] as $kRodadaj => $confronto)
             {
 
-                $nome_time_1 = $this->clubes[array_search($confronto["time_1"], array_column($this->clubes, 'id'))]["nome"];
-                $nome_time_abr_1 = $this->clubes[array_search($confronto["time_1"], array_column($this->clubes, 'id'))]["abr"];
-                $img_time_1 = $this->clubes[array_search($confronto["time_1"], array_column($this->clubes, 'id'))]["img"];
+                $nome_mandante = $this->clubes[array_search($confronto["mandante"], array_column($this->clubes, 'id'))]["nome"];
+                $nome_time_mandante = $this->clubes[array_search($confronto["mandante"], array_column($this->clubes, 'id'))]["abr"];
+                $img_mandante = $this->clubes[array_search($confronto["mandante"], array_column($this->clubes, 'id'))]["img"];
     
-                $nome_time_2 = $this->clubes[array_search($confronto["time_2"], array_column($this->clubes, 'id'))]["nome"];
-                $nome_time_abr_2 = $this->clubes[array_search($confronto["time_2"], array_column($this->clubes, 'id'))]["abr"];
-                $img_time_2 = $this->clubes[array_search($confronto["time_2"], array_column($this->clubes, 'id'))]["img"];
+                $nome_visitante = $this->clubes[array_search($confronto["visitante"], array_column($this->clubes, 'id'))]["nome"];
+                $nome_time_visitante = $this->clubes[array_search($confronto["visitante"], array_column($this->clubes, 'id'))]["abr"];
+                $img_visitante = $this->clubes[array_search($confronto["visitante"], array_column($this->clubes, 'id'))]["img"];
 
                 $local = $confronto["local"];
                 $data  = $confronto["data"];
@@ -82,13 +82,13 @@ class TabelaCampeonato
                             </li>
                             <li class="list-group-item w-100 p-0">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <div class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_time_1.'">'.$nome_time_abr_1.' <img class="me-2" src="images/'.$img_time_1.'" alt="'.$nome_time_1.'"> </div>
+                                    <div class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_mandante.'">'.$nome_time_mandante.' <img class="me-2" src="images/'.$img_mandante.'" alt="'.$nome_mandante.'"> </div>
                                     <div class="p-2 jogos-versus">
                                         <span class="ms-3 me-2 d-inline-block fs-4 fw-semibold">'.( ( isset($confronto["resultado"][0]) != NULL || isset($confronto["resultado"][1]) != NULL ) ? explode("x",$confronto["resultado"])[0] : '').'</span>
                                         <span class="material-symbols-outlined text-end">close</span>
                                         <span class="me-3 ms-3 d-inline-block fs-4 fw-semibold">'.( ( isset($confronto["resultado"][0]) != NULL || isset($confronto["resultado"][1]) != NULL ) ? explode("x",$confronto["resultado"])[1] : '').'</span>
                                     </div>
-                                    <div class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_time_2.'"><img class="me-2" src="images/'.$img_time_2.'" alt="'.$nome_time_2.'">'.$nome_time_abr_2.'</div>
+                                    <div class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_visitante.'"><img class="me-2" src="images/'.$img_visitante.'" alt="'.$nome_visitante.'">'.$nome_time_visitante.'</div>
                                 </div>
                             </li>';
             }
@@ -124,63 +124,63 @@ class TabelaCampeonato
                     $gols_time2 = explode("x",$confronto["resultado"])[1];
                     
                     /* Pontos */
-                    $pts_time_1 = null; $pts_time_2 = null;
-                    $v_time_1   = null; $v_time_2   = null;
-                    $e_time_1   = null; $e_time_2   = null;
-                    $d_time_1   = null; $d_time_2   = null;
+                    $pts_mandante = null; $pts_visitante = null;
+                    $v_mandante   = null; $v_visitante   = null;
+                    $e_mandante   = null; $e_visitante   = null;
+                    $d_mandante   = null; $d_visitante   = null;
                     
                     if( $gols_time1 == $gols_time2 )
                     {
-                        $pts_time_1 = 1; $pts_time_2 = 1;
-                        $v_time_1   = 0; $v_time_2   = 0;
-                        $e_time_1   = 1; $e_time_2   = 1;
-                        $d_time_1   = 0; $d_time_2   = 0;
+                        $pts_mandante = 1; $pts_visitante = 1;
+                        $v_mandante   = 0; $v_visitante   = 0;
+                        $e_mandante   = 1; $e_visitante   = 1;
+                        $d_mandante   = 0; $d_visitante   = 0;
                     } else if ( $gols_time1 > $gols_time2 ) {
-                        $pts_time_1 = 3; $pts_time_2 = 0;
-                        $v_time_1   = 1; $v_time_2   = 0;
-                        $e_time_1   = 0; $e_time_2   = 0;
-                        $d_time_1   = 0; $d_time_2   = 1;
+                        $pts_mandante = 3; $pts_visitante = 0;
+                        $v_mandante   = 1; $v_visitante   = 0;
+                        $e_mandante   = 0; $e_visitante   = 0;
+                        $d_mandante   = 0; $d_visitante   = 1;
                     } else if( $gols_time1 < $gols_time2 ) {
-                        $pts_time_1 = 0; $pts_time_2 = 3;
-                        $v_time_1   = 0; $v_time_2   = 1;
-                        $e_time_1   = 0; $e_time_2   = 0;
-                        $d_time_1   = 1; $d_time_2   = 0;
+                        $pts_mandante = 0; $pts_visitante = 3;
+                        $v_mandante   = 0; $v_visitante   = 1;
+                        $e_mandante   = 0; $e_visitante   = 0;
+                        $d_mandante   = 1; $d_visitante   = 0;
                     }
 
                     /* Retorna chave do array de clubes com base na coluna ID do clube */
-                    $id_time_1 = array_search($confronto["time_1"], array_column($this->clubes, 'id'));
-                    $id_time_2 = array_search($confronto["time_2"], array_column($this->clubes, 'id'));
+                    $id_mandante = array_search($confronto["mandante"], array_column($this->clubes, 'id'));
+                    $id_visitante = array_search($confronto["visitante"], array_column($this->clubes, 'id'));
 
                     /* Pontos */
-                    $this->clubes[$id_time_1]["criterios"]["p"] += $pts_time_1;
-                    $this->clubes[$id_time_2]["criterios"]["p"] += $pts_time_2;
+                    $this->clubes[$id_mandante]["criterios"]["p"] += $pts_mandante;
+                    $this->clubes[$id_visitante]["criterios"]["p"] += $pts_visitante;
         
                     /* Vitórias */
-                    $this->clubes[$id_time_1]["criterios"]["v"] += $v_time_1;
-                    $this->clubes[$id_time_2]["criterios"]["v"] += $v_time_2;
+                    $this->clubes[$id_mandante]["criterios"]["v"] += $v_mandante;
+                    $this->clubes[$id_visitante]["criterios"]["v"] += $v_visitante;
         
                     /* Empates */
-                    $this->clubes[$id_time_1]["criterios"]["e"] += $e_time_1;
-                    $this->clubes[$id_time_2]["criterios"]["e"] += $e_time_2;
+                    $this->clubes[$id_mandante]["criterios"]["e"] += $e_mandante;
+                    $this->clubes[$id_visitante]["criterios"]["e"] += $e_visitante;
         
                     /* Derrotas */
-                    $this->clubes[$id_time_1]["criterios"]["d"] += $d_time_1;
-                    $this->clubes[$id_time_2]["criterios"]["d"] += $d_time_2;
+                    $this->clubes[$id_mandante]["criterios"]["d"] += $d_mandante;
+                    $this->clubes[$id_visitante]["criterios"]["d"] += $d_visitante;
         
                     /* Gols Pro */
-                    $this->clubes[$id_time_1]["criterios"]["gp"] += $gols_time1;
-                    $this->clubes[$id_time_2]["criterios"]["gp"] += $gols_time2;
+                    $this->clubes[$id_mandante]["criterios"]["gp"] += $gols_time1;
+                    $this->clubes[$id_visitante]["criterios"]["gp"] += $gols_time2;
         
                     /* Gols Contra */
-                    $this->clubes[$id_time_1]["criterios"]["gc"] += $gols_time2;
-                    $this->clubes[$id_time_2]["criterios"]["gc"] += $gols_time1;
+                    $this->clubes[$id_mandante]["criterios"]["gc"] += $gols_time2;
+                    $this->clubes[$id_visitante]["criterios"]["gc"] += $gols_time1;
         
-                    $this->clubes[$id_time_1]["criterios"]["sg"] += ($gols_time1  - $gols_time2); 
-                    $this->clubes[$id_time_2]["criterios"]["sg"] += ($gols_time2  - $gols_time1);
+                    $this->clubes[$id_mandante]["criterios"]["sg"] += ($gols_time1  - $gols_time2); 
+                    $this->clubes[$id_visitante]["criterios"]["sg"] += ($gols_time2  - $gols_time1);
 
                     /* Últimos Jogos */
-                    $this->clubes[$id_time_1]["ultimos_jogos"][] = ($pts_time_1 == 3 ? 'v': ( $pts_time_1 == 1 ? 'e' : 'd'));
-                    $this->clubes[$id_time_2]["ultimos_jogos"][] = ($pts_time_2 == 3 ? 'v': ( $pts_time_2 == 1 ? 'e' : 'd'));
+                    $this->clubes[$id_mandante]["ultimos_jogos"][] = ($pts_mandante == 3 ? 'v': ( $pts_mandante == 1 ? 'e' : 'd'));
+                    $this->clubes[$id_visitante]["ultimos_jogos"][] = ($pts_visitante == 3 ? 'v': ( $pts_visitante == 1 ? 'e' : 'd'));
 
                 }
 
@@ -303,8 +303,8 @@ class TabelaCampeonato
         {
             foreach ($this->rodadas[$kRodada] as $kRodadaj => $confronto)
             {
-                $clubes[] = $confronto['time_1'];
-                $clubes[] = $confronto['time_2'];
+                $clubes[] = $confronto['mandante'];
+                $clubes[] = $confronto['visitante'];
             }
         }
         $clubes = array_unique($clubes);      
