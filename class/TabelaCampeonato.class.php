@@ -358,16 +358,18 @@ class TabelaCampeonato
             $r2[$kData]['rodada_completa'] = $rodada_completa;
         }
 
-        $i = 0;
+        //var_dump($r2);
+
+        $i = 1;
         foreach ($r2 as $k => $v) {
             $r3[$i]['data'] = strtotime($v['data']);
             $r3[$i]['rodada_completa'] = $v['rodada_completa'];
             ++$i;
         }        
-        
+        //var_dump($r3);
         $today = strtotime(date('Y-m-d'));
 
-        /* Verifica se todos os confrontos foram realizados */
+        /* Verifica se todos os confrontos de todas as rodadas foram realizados */
         $confrontos_realizados = true;
         foreach($r3 as $k => $v)
             if($v['rodada_completa'] == false)
@@ -382,14 +384,18 @@ class TabelaCampeonato
                         if($v['data'] < $today)
                             unset($r3[$k]);
             }
-        
             $date = max(array_column($r3,'data'));
+            
+            $r4 = array_column($r2,'data');
+            
+            array_unshift($r4, "-");
+            unset($r4[0]);    
 
-            $rodada = array_search(date('Y-m-d',$date), array_column($r2,'data'));
+            $rodada = array_search(date('Y-m-d',$date), $r4);
         } else {
-            $rodada = count($r3);  
+            $rodada = count($r3);
         }
-       
+
         return $rodada;
     }
 
