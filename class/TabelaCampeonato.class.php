@@ -46,12 +46,14 @@ class TabelaCampeonato
                         <ul class="nav d-flex justify-content-between align-items-center">
                             <li class="nav-item">
                                 <a id="btn-rodada-prev" class="nav-link pe-5" '.($nRodada > 1 ? ' onclick="rodada(-1)" href="javascript:void(0)"' : '').'>
-                                    <span class="material-symbols-outlined '.($nRodada > 1 ? 'text-success' : 'text-end').'">arrow_back_ios</span>
+                                    <i style="font-size:1.5rem;" class="bi-chevron-left '.($nRodada > 1 ? 'text-success' : 'text-end').'"></i>
                                 </a>
                             </li>
                             <li class="fw-bold" id="nrodada" data-totalrodadas="'.count($this->rodadas).'" data-nrodada="'.$nRodada.'">'.$nRodada.'ª RODADA</li>
                             <li class="nav-item">
-                                <a id="btn-rodada-next" class="nav-link ps-5" '.(count($this->rodadas) != $nRodada ? 'onclick="rodada(1)" href="javascript:void(0)"' : '').'><span class="material-symbols-outlined '.(count($this->rodadas) != $nRodada ? 'text-success' : 'text-end').'">arrow_forward_ios</span></a>
+                                <a id="btn-rodada-next" class="nav-link ps-5" '.(count($this->rodadas) != $nRodada ? 'onclick="rodada(1)" href="javascript:void(0)"' : '').'>
+                                    <i style="font-size:1.5rem;" class="bi-chevron-right '.(count($this->rodadas) != $nRodada ? 'text-success' : 'text-end').'"></i>
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -82,13 +84,13 @@ class TabelaCampeonato
                             </li>
                             <li class="list-group-item w-100 p-0">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <div class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_mandante.'">'.$nome_time_mandante.' <img class="me-2" src="images/'.$img_mandante.'" alt="'.$nome_mandante.'"> </div>
+                                    <div translate="no" class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_mandante.'">'.$nome_time_mandante.' <img class="me-2" src="images/'.$img_mandante.'" alt="'.$nome_mandante.'"> </div>
                                     <div class="p-2 jogos-versus">
                                         <span class="ms-3 me-2 d-inline-block fs-4 fw-semibold">'.( ( isset($confronto["resultado"][0]) != NULL || isset($confronto["resultado"][1]) != NULL ) ? explode("x",$confronto["resultado"])[0] : '').'</span>
-                                        <span class="material-symbols-outlined text-end">close</span>
+                                        <i class="bi bi-x-lg"></i>
                                         <span class="me-3 ms-3 d-inline-block fs-4 fw-semibold">'.( ( isset($confronto["resultado"][0]) != NULL || isset($confronto["resultado"][1]) != NULL ) ? explode("x",$confronto["resultado"])[1] : '').'</span>
                                     </div>
-                                    <div class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_visitante.'"><img class="me-2" src="images/'.$img_visitante.'" alt="'.$nome_visitante.'">'.$nome_time_visitante.'</div>
+                                    <div translate="no" class="p-2 jogos-time fs-5 fw-lighter" title="'.$nome_visitante.'"><img class="me-2" src="images/'.$img_visitante.'" alt="'.$nome_visitante.'">'.$nome_time_visitante.'</div>
                                 </div>
                             </li>';
             }
@@ -263,14 +265,14 @@ class TabelaCampeonato
         
         $code = '<ul class="nav d-flex justify-content-between align-items-center mb-2 bg-light">
                     <li class="nav-item pt-1">
-                        <a id="btn-fase-prev" class="nav-link pe-5" '.($nFase > 1 ? ' onclick="fase(-1)" href="javascript:void(0)"' : '').'>
-                            <span class="material-symbols-outlined '.($nFase > 1 ? 'text-success' : 'text-end').'">arrow_back_ios</span>
+                        <a id="btn-fase-prev" class="nav-link btn-fase" '.($nFase > 1 ? ' onclick="fase(-1)" href="javascript:void(0)"' : '').'>
+                            <i style="font-size:1.5rem;" class="bi-chevron-left '.($nFase > 1 ? 'text-success' : 'text-end').'"></i>
                         </a>
                     </li>
-                    <li class="nav-item fw-bold fs-5" id="nfase" data-totalfases="'.$this->getTotalFases().'" data-nfase="'.$this->getFaseId().'">'.$this->getFaseDescricao().'</li>
+                    <li class="nav-item fw-bolder" id="nfase" data-totalfases="'.$this->getTotalFases().'" data-nfase="'.$this->getFaseId().'">'.$this->getFaseDescricao().'</li>
                     <li class="nav-item pt-1">
-                        <a id="btn-fase-next" class="nav-link ps-5" '.( $this->getTotalFases() != $nFase ? 'onclick="fase(1)" href="javascript:void(0)"' : '' ).'">
-                            <span class="material-symbols-outlined '.($this->getTotalFases() != $nFase ? 'text-success' : 'text-end').'">arrow_forward_ios</span>
+                        <a id="btn-fase-next" class="nav-link btn-fase" '.( $this->getTotalFases() != $nFase ? 'onclick="fase(1)" href="javascript:void(0)"' : '' ).'">
+                            <i style="font-size:1.5rem;" class="bi-chevron-right '.($this->getTotalFases() != $nFase ? 'text-success' : 'text-end').'"></i>
                         </a>
                     </li>
                 </ul>';
@@ -367,7 +369,11 @@ class TabelaCampeonato
             ++$i;
         }        
         //var_dump($r3);
-        $today = strtotime(date('Y-m-d'));
+        $dtz = new DateTimeZone("America/Sao_Paulo");
+        $dt = new DateTime("now", $dtz);
+
+        $today = strtotime($dt->format("Y-m-d"));
+        //$today = strtotime('2022-07-02');
 
         /* Verifica se todos os confrontos de todas as rodadas foram realizados */
         $confrontos_realizados = true;
@@ -384,7 +390,7 @@ class TabelaCampeonato
                         if($v['data'] < $today)
                             unset($r3[$k]);
             }
-            $date = max(array_column($r3,'data'));
+            $date = min(array_column($r3,'data'));
             
             $r4 = array_column($r2,'data');
             

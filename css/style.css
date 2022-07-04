@@ -20,6 +20,8 @@ table thead tr th:not(:first-child) { text-align:center;}
 table th:first-child { background-color: #FFF; position:sticky;left:0px;z-index:9;}
 table td:nth-child(2) {background-color: #FFF;position:sticky;left:0px;z-index:9;}
 #btn-regulamento {font-size:10px;color:#51a81e;}
+.btn-fase { padding: 0 15px 0 15px;font-size:16px;}
+#nfase { font-size:17px;}
 
 .cla { font-size: 20px; width:20px; display:inline-block;}
 .cla-gcla { color: blue; display:inline-block; font-size:20px; }
@@ -52,4 +54,6 @@ table td:nth-child(2) {background-color: #FFF;position:sticky;left:0px;z-index:9
     table tbody tr td:not(:first-child) { text-align:left; }
     table thead tr th:not(:first-child) { text-align:left; }
     .legenda { font-size: 11px; margin-top: 7px;margin-bottom: 15px;}
+    .btn-fase{ padding: 0 15px 0 15px;}
+    #nfase { font-size:14px;}
 }

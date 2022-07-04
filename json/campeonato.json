@@ -290,7 +290,7 @@
                                 "local": "IPATINGÃO",
                                 "mandante": 4,
                                 "visitante": 3,
-                                "resultado": null
+                                "resultado": "2x0"
                             },
                             {
                                 "data": "02/07/2022",
@@ -298,7 +298,7 @@
                                 "local": "ARENA VERA CRUZ",
                                 "mandante": 1,
                                 "visitante": 6,
-                                "resultado": null
+                                "resultado": "3x0"
                             },
                             {
                                 "data": "02/07/2022",
@@ -306,8 +306,164 @@
                                 "local": "MUNICIPAL DE JUIZ DE FORA",
                                 "mandante": 5,
                                 "visitante": 2,
-                                "resultado": null
+                                "resultado": "0x0"
                             }
+                    ],
+                    "5": [
+                        {
+                            "data": "05/07/2022",
+                            "hora": "19:00",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "mandante": 6,
+                            "visitante": 4,
+                            "resultado": null
+                        },
+                        {
+                            "data": "06/07/2022",
+                            "hora": "19:00",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "mandante": 2,
+                            "visitante": 1,
+                            "resultado": null
+                        },
+                        {
+                            "data": "06/07/2022",
+                            "hora": "19:30",
+                            "local": "ARENA DO JACARÉ",
+                            "mandante": 3,
+                            "visitante": 5,
+                            "resultado": null
+                        }
+                    ],
+                    "6": [
+                        {
+                            "data": "09/07/2022",
+                            "hora": "15:00",
+                            "local": "ARENA VERA CRUZ",
+                            "mandante": 1,
+                            "visitante": 2,
+                            "resultado": null
+                        },
+                        {
+                            "data": "09/07/2022",
+                            "hora": "16:00",
+                            "local": "IPATINGÃO",
+                            "mandante": 4,
+                            "visitante": 6,
+                            "resultado": null
+                        },
+                        {
+                            "data": "09/07/2022",
+                            "hora": "16:00",
+                            "local": "MUNICIPAL DE JUIZ DE FORA",
+                            "mandante": 5,
+                            "visitante": 3,
+                            "resultado": null
+                        }
+                    ],
+                    "7": [
+                        {
+                            "data": "15/07/2022",
+                            "hora": "19:30",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "mandante": 2,
+                            "visitante": 5,
+                            "resultado": null
+                        },
+                        {
+                            "data": "16/07/2022",
+                            "hora": "15:30",
+                            "local": "ARENA DO JACARÉ",
+                            "mandante": 3,
+                            "visitante": 4,
+                            "resultado": null
+                        },
+                        {
+                            "data": "17/07/2022",
+                            "hora": "10:00",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "mandante": 6,
+                            "visitante": 1,
+                            "resultado": null
+                        }
+                    ],
+                    "8": [
+                        {
+                            "data": "20/07/2022",
+                            "hora": "15:00",
+                            "local": "MUNICIPAL JUIZ DE FORA",
+                            "mandante": 5,
+                            "visitante": 6,
+                            "resultado": null
+                        },
+                        {
+                            "data": "20/07/2022",
+                            "hora": "15:00",
+                            "local": "ARENA VERA CRUZ",
+                            "mandante": 1,
+                            "visitante": 4,
+                            "resultado": null
+                        },
+                        {
+                            "data": "20/07/2022",
+                            "hora": "19:30",
+                            "local": "ARENA DO JACARÉ",
+                            "mandante": 3,
+                            "visitante": 2,
+                            "resultado": null
+                        }
+                    ],
+                    "9": [
+                        {
+                            "data": "23/07/2022",
+                            "hora": "15:00",
+                            "local": "ARENA VERA CRUZ",
+                            "mandante": 1,
+                            "visitante": 3,
+                            "resultado": null
+                        },
+                        {
+                            "data": "23/07/2022",
+                            "hora": "16:00",
+                            "local": "IPATINGÃO",
+                            "mandante": 4,
+                            "visitante": 5,
+                            "resultado": null
+                        },
+                        {
+                            "data": "24/07/2022",
+                            "hora": "10:00",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "mandante": 6,
+                            "visitante": 2,
+                            "resultado": null
+                        }
+                    ],
+                    "10": [
+                        {
+                            "data": "30/07/2022",
+                            "hora": "16:00",
+                            "local": "ARENA DO JACARÉ",
+                            "mandante": 3,
+                            "visitante": 6,
+                            "resultado": null
+                        },
+                        {
+                            "data": "30/07/2022",
+                            "hora": "16:00",
+                            "local": "MUNICIPAL DE VARGINHA",
+                            "mandante": 2,
+                            "visitante": 4,
+                            "resultado": null
+                        },
+                        {
+                            "data": "30/07/2022",
+                            "hora": "16:00",
+                            "local": "MUNICIPAL JUIZ DE FORA",
+                            "mandante": 5,
+                            "visitante": 1,
+                            "resultado": null
+                        }
                     ]
                 }
             
