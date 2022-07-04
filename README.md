@@ -4,7 +4,7 @@ Projeto criado para controlar um campeonato de pontos corridos. O projeto foi ba
 
 Utilizado bootstrap@5.2.0-beta1
 
-Demonstração: http://tabela.epizy.com/
+Demonstração: http://tabela.loopdev.com.br/
 
 ![tabela_screen](https://user-images.githubusercontent.com/1745474/175612999-680f5439-9bf8-43ea-ae8c-2a0c1eb899aa.png)
 
