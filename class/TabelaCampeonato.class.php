@@ -314,22 +314,25 @@ class TabelaCampeonato
         return $clubes;
     }
 
-    public function showUltimosJogos($time)
-    {        
+    public function showUltimosJogos($arrUltimosJogos)
+    {
         $code = "";
+        
+        $arrUltimosJogos = array_reverse($arrUltimosJogos);
+        $arrUltimosJogos = array_slice($arrUltimosJogos, 0, 5);
+        $arrUltimosJogos = array_reverse($arrUltimosJogos);
+        
         for($i=0;$i<=4;++$i)
         {
-            if(isset($time[$i]))
+            if(isset($arrUltimosJogos[$i]))
             {
-                if($time[$i] == 'v')
+                if($arrUltimosJogos[$i] == 'v')
                     $code .= '<span class="cla-ultimos-jogos cla-ultimos-jogos--v"></span>';
-                else if($time[$i] == 'd')
+                else if($arrUltimosJogos[$i] == 'd')
                     $code .= '<span class="cla-ultimos-jogos cla-ultimos-jogos--d"></span>';
-                else if($time[$i] == 'e')
+                else if($arrUltimosJogos[$i] == 'e')
                     $code .= '<span class="cla-ultimos-jogos cla-ultimos-jogos--e"></span>';
             }
-            //else
-                //$code .= '<span class="cla-ultimos-jogos cla-ultimos-jogos--neutra"></span>';
         }
 
         return $code;
@@ -373,7 +376,6 @@ class TabelaCampeonato
         $dt = new DateTime("now", $dtz);
 
         $today = strtotime($dt->format("Y-m-d"));
-        //$today = strtotime('2022-07-02');
 
         /* Verifica se todos os confrontos de todas as rodadas foram realizados */
         $confrontos_realizados = true;
@@ -398,6 +400,10 @@ class TabelaCampeonato
             unset($r4[0]);    
 
             $rodada = array_search(date('Y-m-d',$date), $r4);
+            
+            /* Caso a rodada termine no sábado, a rodada com os jogos ficam sendo mostradas até no domingo  */
+            if( $dt->format("N") >=6 && $dt->format("N") <= 7 )
+                --$rodada;
         } else {
             $rodada = count($r3);
         }

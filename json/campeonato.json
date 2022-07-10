@@ -316,7 +316,7 @@
                             "local": "MUNICIPAL DE VARGINHA",
                             "mandante": 6,
                             "visitante": 4,
-                            "resultado": null
+                            "resultado": "3x2"
                         },
                         {
                             "data": "06/07/2022",
@@ -324,7 +324,7 @@
                             "local": "MUNICIPAL DE VARGINHA",
                             "mandante": 2,
                             "visitante": 1,
-                            "resultado": null
+                            "resultado": "0x0"
                         },
                         {
                             "data": "06/07/2022",
@@ -332,7 +332,7 @@
                             "local": "ARENA DO JACARÉ",
                             "mandante": 3,
                             "visitante": 5,
-                            "resultado": null
+                            "resultado": "1x0"
                         }
                     ],
                     "6": [
@@ -342,7 +342,7 @@
                             "local": "ARENA VERA CRUZ",
                             "mandante": 1,
                             "visitante": 2,
-                            "resultado": null
+                            "resultado": "0x0"
                         },
                         {
                             "data": "09/07/2022",
@@ -350,7 +350,7 @@
                             "local": "IPATINGÃO",
                             "mandante": 4,
                             "visitante": 6,
-                            "resultado": null
+                            "resultado": "1x1"
                         },
                         {
                             "data": "09/07/2022",
@@ -358,7 +358,7 @@
                             "local": "MUNICIPAL DE JUIZ DE FORA",
                             "mandante": 5,
                             "visitante": 3,
-                            "resultado": null
+                            "resultado": "0x1"
                         }
                     ],
                     "7": [
